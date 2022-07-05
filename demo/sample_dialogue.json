@@ -1,6 +1,0 @@
-{
-    "dialogue_context" : {
-        "DIALOGUE_TYPE" : {"name": "Buddy", "text": "Hey! Glad to see my dialogue's working!"},
-        "DIALOGUE_TYPE" : {"text": "And the legend begins..."}
-    }
-}

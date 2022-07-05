@@ -1,0 +1,33 @@
+{
+    "State" : {
+        "dialogue" : [
+            "Nice! It's working.",
+            "But does it really?"
+        ],
+        "next" : "END"
+    },
+    "Repeat" : {
+        "dialogue" : [
+            "Hello again.",
+            "As you can see, it is still working. Awesome, right?",
+            "Wanna say a response?"
+        ],
+        "choice" : {
+            "ch0" : "No_response",
+            "ch1" : "Respond"
+        }
+    },
+    "Respond" : {
+        "dialogue" : [
+            "So you can talk. Nice!",
+            "Everything seems to work as it should. Awesome job!"
+        ],
+        "next" : "END"
+    },
+    "No_response" : {
+        "dialogue" : [
+            "Alright. Everything seems to work as it should though."
+        ],
+        "next" : "END"
+    }
+}
