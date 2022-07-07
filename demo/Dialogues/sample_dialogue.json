@@ -13,8 +13,8 @@
             "Wanna say a response?"
         ],
         "choice" : {
-            "ch0" : "No_response",
-            "ch1" : "Respond"
+            "(Don't respond)" : "No_response",
+            "(Respond)" : "Respond"
         }
     },
     "Respond" : {
