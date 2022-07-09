@@ -22,6 +22,8 @@
             "So you can talk. Nice!",
             "Everything seems to work as it should. Awesome job!"
         ],
+        "function" : "callback",
+        "args" : [],
         "next" : "END"
     },
     "No_response" : {
