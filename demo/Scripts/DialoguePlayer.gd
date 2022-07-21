@@ -9,14 +9,6 @@ var dialogue: Dictionary = {}
 var current_event: Dictionary = {}
 var current_state: String = ""
 
-# func start():
-	# Initial dialogue preparations
-	# _load_dialogue()
-	# TODO: Restore current_state value based on key
-	# if (current_state == ""):
-	# 	current_state = "Start"
-	# next()
-
 
 # func next():
 	# if current_state == "END":
@@ -30,10 +22,14 @@ var current_state: String = ""
 
 
 func play(key, json_file):
-    _load_dialogue(json_file)
+	emit_signal("dialogue_started")
+	_load_dialogue(json_file)
 
     # Retrieve current_state value using key
-    _process_state()
+	# if (current_state == ""):
+	# 	current_state = "Start"
+	_process_state()
+
 
 # TODO: Add an else statement for catching and displaying errors
 func _load_dialogue(path):
