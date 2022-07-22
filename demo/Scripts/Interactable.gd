@@ -8,6 +8,7 @@ onready var dialogue_player = get_node("/root/Game/DialoguePlayer")
 
 var is_interacting: bool = false
 
+# Just a placeholder function
 func _on_Button_pressed():
 	if not is_interacting:
 		is_interacting = true
