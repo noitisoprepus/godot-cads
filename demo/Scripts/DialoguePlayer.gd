@@ -54,12 +54,9 @@ func _process_event():
     pass
 
 
-# Think of a way to dynamically connect this to the player's interaction
 # func on_interact_pressed():
-#   start()
 #   pass
 
 
 # func on_next_pressed():
-#   next()
 #   pass
