@@ -8,27 +8,15 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Resource",
-"class": "Interaction",
-"language": "GDScript",
-"path": "res://Scripts/Interaction.gd"
-}, {
-"base": "Resource",
-"class": "SaveGame",
-"language": "GDScript",
-"path": "res://Scripts/SaveGame.gd"
-} ]
-_global_script_class_icons={
-"Interaction": "",
-"SaveGame": ""
-}
-
 [application]
 
 config/name="CADS"
 run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SaveGame="*res://Scripts/SaveGame.gd"
 
 [debug]
 

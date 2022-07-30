@@ -5,6 +5,7 @@ signal dialogue_finished
 
 onready var dialogue_ui = get_node("/root/Game/UI/DialogueUI")
 
+var game_data: Dictionary= SaveGame.data
 var dialogue: Dictionary = {}
 var current_event: Dictionary = {}
 var current_state: String = ""
@@ -26,13 +27,12 @@ func play(key, json_file):
 	_load_dialogue(json_file)
 
     # Retrieve current_state value using key
-	# if (current_state == ""):
-	# 	current_state = "Start"
+	current_state = _get_dialogue_state(key)
 	_process_state()
 
 
 # TODO: Add an else statement for catching and displaying errors
-func _load_dialogue(path):
+func _load_dialogue(path: String):
     var dialogue_file = File.new()
     if dialogue_file.file_exists(path):
         dialogue_file.open(path, dialogue_file.READ)
@@ -52,6 +52,13 @@ func _process_state():
 
 func _process_event():
     pass
+
+
+func _get_dialogue_state(key: String) -> String:
+	var state: String = "Start"
+	if game_data.dialogues.has(key):
+		state = game_data.dialogues[key]
+	return state
 
 
 # func on_interact_pressed():
