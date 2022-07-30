@@ -4,7 +4,7 @@
             "Nice! It's working.",
             "But does it really?"
         ],
-        "next" : "END"
+        "next" : "Repeat"
     },
     "Repeat" : {
         "dialogue" : [
