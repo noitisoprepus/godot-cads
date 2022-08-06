@@ -7,8 +7,9 @@
 [node name="Game" type="Node"]
 
 [node name="Interactable" parent="." instance=ExtResource( 1 )]
-interactable_key = "Test Interaction"
+interactable_key = "Simple dialogue test"
 interactable_name = "Test"
+dialogue_json = "res://Dialogues/simple_dialogue.json"
 
 [node name="DialoguePlayer" type="Node" parent="."]
 script = ExtResource( 2 )

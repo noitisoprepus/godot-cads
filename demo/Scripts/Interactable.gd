@@ -23,5 +23,5 @@ func _on_Button_pressed():
 
 func _on_dialogue_finished():
 	is_interacting = false
-	dialogue_player.disconnect("dialogue_finished", self, "on_dialogue_finished")
-	dialogue_player.disconnect("interact", dialogue_player, "on_interact_pressed")
+	dialogue_player.disconnect("dialogue_finished", self, "_on_dialogue_finished")
+	self.disconnect("interact", dialogue_player, "on_interact_pressed")

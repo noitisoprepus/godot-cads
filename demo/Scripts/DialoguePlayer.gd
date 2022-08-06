@@ -11,25 +11,11 @@ var current_event: Dictionary = {}
 var current_state: String = ""
 var current_key: String = ""
 
-
-# func next():
-	# if current_state == "END":
-		# TODO: Close Dialogue UI
-		# TODO: Reset state
-	# 	current_state = "Repeat"
-	# 	return
-
-	# print("Processing dialogue")
-	# _process_state()
-
-
 func play(key, json_file):
+	# TODO: Don't start the dialogue right away. Check first if current_state != "END"
 	emit_signal("dialogue_started")
 	current_key = key
 	_load_dialogue(json_file)
-
-	# Retrieve current_state value using key
-	current_state = _get_dialogue_state(current_key)
 	_process_state()
 
 
@@ -44,22 +30,30 @@ func _load_dialogue(path: String):
 
 
 func _process_state():
+	# Retrieve current_state value using key
+	current_state = _get_dialogue_state(current_key)
 	if dialogue.has(current_state):
 		current_event = dialogue[current_state]
-		current_state = current_event["next"]
 		_process_event()
 	# else:
-	#   display_message(["Error. State" + current_state + " not found"])
-
+		# dialogue_ui.update_content_label("Invalid state: " + current_state)
 
 func _process_event():
 	if current_event.dialogue.empty():
 		emit_signal("dialogue_finished")
 		dialogue_ui.reset_ui()
 
-		game_data.dialogues[current_key] = current_state
-		SaveGame.write_game_data()
-		return
+		if current_event.has("choice"):
+			# dialogue_ui.show_choices(current_event.choice)
+			pass
+		elif current_event.has("function"):
+			# invoke(current_event.function)
+			pass
+		else:
+			# Set next state
+			game_data.dialogues[current_key] = current_event.next
+			SaveGame.write_game_data()
+			return
 
 	var content = current_event.dialogue.pop_front()
 	dialogue_ui.update_content_label(content)

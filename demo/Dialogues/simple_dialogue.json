@@ -1,0 +1,30 @@
+{
+    "Start" : {
+        "dialogue" : [
+            "Hello. This is the starting dialogue.",
+            "This is the next dialogue line."
+        ],
+        "next" : "02"
+    },
+    "02" : {
+        "dialogue" : [
+            "Nice! It's working.",
+            "You are now in the second dialogue state"
+        ],
+        "next" : "03"
+    },
+    "03" : {
+        "dialogue" : [
+            "Dialogue's working as it should.",
+            "Now continue working on the system."
+        ],
+        "next" : "04"
+    },
+    "04" : {
+        "dialogue" : [
+            "Good job, man!",
+            "(Pat in the back)"
+        ],
+        "next" : "END"
+    }
+}
