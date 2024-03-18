@@ -6,12 +6,13 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
 [application]
 
 config/name="CADS"
 run/main_scene="res://Scenes/Game.tscn"
+config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
 
 [autoload]
@@ -24,9 +25,13 @@ settings/fps/force_fps=60
 
 [display]
 
-window/size/width=640
-window/size/height=480
+window/size/viewport_width=640
+window/size/viewport_height=480
 window/size/resizable=false
+
+[dotnet]
+
+project/assembly_name="CADS"
 
 [physics]
 
@@ -34,4 +39,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/defaults/default_environment="res://default_env.tres"

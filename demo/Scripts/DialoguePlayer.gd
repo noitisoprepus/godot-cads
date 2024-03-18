@@ -3,7 +3,7 @@ extends Node
 signal dialogue_started
 signal dialogue_finished
 
-onready var dialogue_ui = get_node("/root/Game/UI/DialogueUI")
+@onready var dialogue_ui = get_node("/root/Game/UI/DialogueUI")
 
 var game_data: Dictionary= {}
 var dialogue: Dictionary = {}
@@ -24,7 +24,9 @@ func _load_dialogue(path: String):
 	var dialogue_file = File.new()
 	if dialogue_file.file_exists(path):
 		dialogue_file.open(path, dialogue_file.READ)
-		dialogue = parse_json(dialogue_file.get_as_text())
+		var test_json_conv = JSON.new()
+		test_json_conv.parse(dialogue_file.get_as_text())
+		dialogue = test_json_conv.get_data()
 	# else:
 		# display_message(["Error. Dialogue JSON does not exist"])
 
@@ -39,7 +41,7 @@ func _process_state():
 		# dialogue_ui.update_content_label("Invalid state: " + current_state)
 
 func _process_event():
-	if current_event.dialogue.empty():
+	if current_event.dialogue.is_empty():
 		emit_signal("dialogue_finished")
 		dialogue_ui.reset_ui()
 

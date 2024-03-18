@@ -1,6 +1,6 @@
 extends Node2D
 
-export(Array, String) var local_events
+@export var local_events # (Array, String)
 
 func _ready():
 	pass

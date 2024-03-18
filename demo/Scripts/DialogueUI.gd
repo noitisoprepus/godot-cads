@@ -1,7 +1,7 @@
 extends Control
 
-onready var content_panel = $Panel
-onready var content_label = $Panel/RichTextLabel
+@onready var content_panel = $Panel
+@onready var content_label = $Panel/RichTextLabel
 
 func _ready():
     reset_ui()
